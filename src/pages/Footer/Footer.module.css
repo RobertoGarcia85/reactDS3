@@ -1,0 +1,62 @@
+/* Pie de página con efecto Glassmorphism consistente */
+.footer {
+  width: 100%;
+  margin-top: 3rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border-top: 1px solid var(--glass-border);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.infoGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: 'Black Ops One', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.subject {
+  color: var(--color-accent);
+}
+
+.divider {
+  color: var(--secondary-color);
+}
+
+.module {
+  color: var(--secondary-color);
+}
+
+.copyright {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Adaptabilidad móvil */
+@media (max-width: 600px) {
+  .infoGroup {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .divider {
+    display: none;
+  }
+}

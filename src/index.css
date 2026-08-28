@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Caacupe+One&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Paleta base del usuario */
+  --primary-color: #1B5E20;   /* Verde Oscuro */
+  --secondary-color: #66BB6A; /* Verde Medio / Claro */
+  --color-accent: #E8F5E9;    /* Verde Muy Claro / Crema */
+
+  /* Variables auxiliares para UI y Glassmorphism */
+  --bg-gradient: linear-gradient(135deg, #0d3310 0%, #1b5e20 50%, #2e7d32 100%);
+  --glass-bg: rgba(232, 245, 233, 0.08);
+  --glass-border: rgba(232, 245, 233, 0.18);
+  --glass-hover-bg: rgba(232, 245, 233, 0.14);
+  --text-primary: #E8F5E9;
+  --text-secondary: rgba(232, 245, 233, 0.75);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: 70px; /* Alineado al alto del Navbar */
+  font-family: 'Noto Sans', sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Encabezados con la tipografía decorativa */
+h1, h2, h3 {
+  font-family: 'Black Ops One', cursive;
+  margin: 0 0 1rem 0;
+  letter-spacing: 1px;
+}
+
+/* Wrapper general para contenido de las páginas */
+.pageContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Tarjeta Glassmorphic Reutilizable */
+.glassCard {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.glassCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--secondary-color);
+  background: var(--glass-hover-bg);
+}
+
+/* Clases de texto estándar */
+.titleMain {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}

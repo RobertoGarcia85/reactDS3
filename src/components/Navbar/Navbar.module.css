@@ -1,0 +1,156 @@
+/* Header Fijo con Glassmorphism */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  
+  /* Glassmorphism setup */
+  background: rgba(10, 41, 71, 0.65); /* Basado en --primary-color con transparencia */
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  
+  border-bottom: 1px solid rgba(243, 228, 201, 0.18); /* Sutil brillo superior/inferior */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+.navbar {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand Logo */
+.logoLink {
+  font-family: 'Black Ops One', cursive;
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.logoLink:hover {
+  opacity: 0.85;
+}
+
+/* Lista de Enlaces */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(243, 228, 201, 0.8);
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Feedback UX: Hover state */
+.link:hover {
+  color: var(--secondary-color);
+  background: rgba(243, 228, 201, 0.08);
+}
+
+/* Indicator de Active Page */
+.active {
+  color: var(--secondary-color);
+  font-weight: 700;
+  background: rgba(243, 228, 201, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(243, 228, 201, 0.25);
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+}
+
+/* Botón Hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive / Adaptabilidad */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    gap: 2rem;
+    
+    /* Panel móvil con Glassmorphism denso */
+    background: rgba(10, 41, 71, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: right 0.4s ease;
+  }
+
+  .navLinks.open {
+    right: 0;
+  }
+
+  .link {
+    font-size: 1.2rem;
+  }
+
+  /* Animación icono de hamburguesa a "X" */
+  .activeHamburger .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .activeHamburger .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .activeHamburger .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

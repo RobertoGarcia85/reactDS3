@@ -1,0 +1,87 @@
+.hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-bottom: 2.5rem;
+  background: rgba(232, 245, 233, 0.05);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border: 1px solid var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  color: var(--secondary-color);
+  font-size: 1.6rem;
+  border-bottom: 2px solid var(--glass-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.cardTitle {
+  color: var(--color-accent);
+  font-size: 1.25rem;
+}
+
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.infoBox {
+  height: 100%;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--glass-border);
+  gap: 0.5rem;
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+
+.codeTag {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.toolName {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
